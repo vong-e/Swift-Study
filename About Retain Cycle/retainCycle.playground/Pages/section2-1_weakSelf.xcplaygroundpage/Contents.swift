@@ -17,7 +17,7 @@ class Car {
     init(model: String) {
         self.model = model
     }
-    var owner: Person?
+    weak var owner: Person? //약한 참조로 선언
     
     deinit {
         print("Car \(model) is being deinitialized")
