@@ -20,7 +20,8 @@ class CreditCard {
 }
 
 var 영희: Customer?
-영희.Card = CreditCard
-
+영희 = Customer(name: "영희")
+영희!.card = CreditCard(number: 1234_5678_9012_3456, customer: 영희!)
+영희 = nil
 
 
