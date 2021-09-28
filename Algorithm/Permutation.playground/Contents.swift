@@ -35,6 +35,7 @@ var numberOfPick: Int = 3 //몇개로 구성된 순열을 찾을지
 func permutaionWithRecursive(array: [String], pickCount: Int, permutationArray: inout [[String]], index: Int = 0) {
     if index == pickCount {
         permutationArray.append(Array(array[0..<index]))
+        return
     }
     
     var arr = array
