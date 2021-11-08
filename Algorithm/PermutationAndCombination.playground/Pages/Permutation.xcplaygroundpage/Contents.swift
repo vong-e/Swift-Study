@@ -1,8 +1,7 @@
 import Foundation
 
-/*
- For loop를 사용한 순열 찾기
- */
+//MARK: - For loop를 사용한 조합 찾기
+
 let numberArray: [Int] = [1, 2, 3, 4]
 
 func permutationWithForLoop(array: [Int]) {
@@ -25,14 +24,13 @@ func permutationWithForLoop(array: [Int]) {
 //permutationWithForLoop(array: numberArray)
 
 
-/*
- 재귀를 사용한 순열 찾기
- */
+//MARK: - 재귀함수를 사용한 조합 찾기
+
 let stringArray: [String] = ["A", "B", "C", "D"]
 var permutaionArray: [[String]] = [] //찾은 순열을 저장할 배열
-var numberOfPick: Int = 2 //몇개로 구성된 순열을 찾을지
+let numberOfPick: Int = 2 //몇개로 구성된 순열을 찾을지
 
-func permutaionWithRecursive(array: [String], pickCount: Int, permutationArray: inout [[String]], index: Int = 0) {
+func permutaionWithRecursion(array: [String], pickCount: Int, permutationArray: inout [[String]], index: Int = 0) {
     if index == pickCount {
         permutationArray.append(Array(array[0..<index]))
         return
@@ -42,13 +40,13 @@ func permutaionWithRecursive(array: [String], pickCount: Int, permutationArray: 
     
     for i in index..<arr.count {
         arr.swapAt(index, i)
-        permutaionWithRecursive(array: arr, pickCount: pickCount, permutationArray: &permutationArray, index: index + 1)
+        permutaionWithRecursion(array: arr, pickCount: pickCount, permutationArray: &permutationArray, index: index + 1)
         arr.swapAt(index, i)
     }
 }
 
-permutaionWithRecursive(array: stringArray, pickCount: numberOfPick, permutationArray: &permutaionArray)
-print("4개의 값에서 \(numberOfPick)개를 고르는 순열의 수: \(permutaionArray.count)개") //24개
+permutaionWithRecursion(array: stringArray, pickCount: numberOfPick, permutationArray: &permutaionArray)
+print("4개의 값에서 2개를 고르는 순열의 수: \(permutaionArray.count)개") //12개
 print(permutaionArray)
 /*
 [["A", "B"], ["A", "C"], ["A", "D"],
