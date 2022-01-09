@@ -1,6 +1,6 @@
 import Foundation
 
-//MARK: - For loop를 사용한 순열 찾기
+//MARK: - For loop를 사용한 조합 찾기
 
 let numberArray: [Int] = [1, 2, 3, 4]
 
@@ -23,7 +23,7 @@ func combinationWithForLoop(array: [Int]) -> [[Int]] {
  */
 
 
-//MARK: - 재귀함수를 사용한 순열 찾기
+//MARK: - 재귀함수를 사용한 조합 찾기
 let intArray: [Int] = [1, 2, 3, 4]
 var combinationArray: [[Int]] = []
 let numberOfPick: Int = 2
