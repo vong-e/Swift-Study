@@ -6,7 +6,7 @@ let numberArray: [Int] = [1, 2, 3, 4]
 
 func combinationWithForLoop(array: [Int]) -> [[Int]] {
     var combinationArray: [[Int]] = []
-    
+
     for i in 0..<array.count {
         for j in (i+1)..<array.count {
             for k in (j+1)..<array.count {
@@ -34,11 +34,11 @@ func combinationWithRecursion<T>(array: [T], pickCount: Int, currentIndex: Int, 
         combsArray.append(tempArray)
         return []
     }
-    
+
     for i in currentIndex..<array.count {
         combinationWithRecursion(array: array, pickCount: pickCount, currentIndex: i + 1, tempArray: tempArray + [array[i]], combsArray: &combsArray)
     }
-    
+
     return combsArray
 }
 

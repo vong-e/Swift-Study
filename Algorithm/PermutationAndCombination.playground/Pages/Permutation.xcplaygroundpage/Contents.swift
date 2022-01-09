@@ -35,9 +35,9 @@ func permutaionWithRecursion(array: [String], pickCount: Int, permutationArray: 
         permutationArray.append(Array(array[0..<index]))
         return
     }
-    
+
     var arr = array
-    
+
     for i in index..<arr.count {
         arr.swapAt(index, i)
         permutaionWithRecursion(array: arr, pickCount: pickCount, permutationArray: &permutationArray, index: index + 1)
