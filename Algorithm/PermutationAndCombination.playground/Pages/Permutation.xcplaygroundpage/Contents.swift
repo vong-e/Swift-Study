@@ -1,6 +1,6 @@
 import Foundation
 
-//MARK: - For loop를 사용한 조합 찾기
+//MARK: - For loop를 사용한 순열 찾기
 
 let numberArray: [Int] = [1, 2, 3, 4]
 
@@ -24,7 +24,7 @@ func permutationWithForLoop(array: [Int]) {
 //permutationWithForLoop(array: numberArray)
 
 
-//MARK: - 재귀함수를 사용한 조합 찾기
+//MARK: - 재귀함수를 사용한 순열 찾기
 
 let stringArray: [String] = ["A", "B", "C", "D"]
 var permutaionArray: [[String]] = [] //찾은 순열을 저장할 배열

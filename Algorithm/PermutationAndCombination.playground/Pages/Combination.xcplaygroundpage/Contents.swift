@@ -28,18 +28,24 @@ let intArray: [Int] = [1, 2, 3, 4]
 var combinationArray: [[Int]] = []
 let numberOfPick: Int = 2
 
-func combinationWithRecursion(array: [Int], pickCount: Int, currentIndex: Int, tempArray: [Int], combsArray: inout [[Int]]) -> [[Int]] {
+func combinationWithRecursion(array: [Int], pickCount: Int, index: Int = 0, tempArray: [Int], combsArray: inout [[Int]]) -> [[Int]] {
     if tempArray.count == pickCount {
-        print("템프어레이랑 픽카운트 같음: \(tempArray)")
         combsArray.append(tempArray)
         return []
     }
 
-    for i in currentIndex..<array.count {
-        combinationWithRecursion(array: array, pickCount: pickCount, currentIndex: i + 1, tempArray: tempArray + [array[i]], combsArray: &combsArray)
+    for i in index..<array.count {
+        combinationWithRecursion(array: array, pickCount: pickCount, index: i + 1, tempArray: tempArray + [array[i]], combsArray: &combsArray)
     }
 
     return combsArray
 }
 
-print("Combination with recursion: \(combinationWithRecursion(array: intArray, pickCount: numberOfPick, currentIndex: 0, tempArray: [], combsArray: &combinationArray))")
+combinationWithRecursion(array: intArray, pickCount: numberOfPick, tempArray: [], combsArray: &combinationArray)
+print("4개의 값에서 2개를 고르는 조합의 수: \(combinationArray.count)개") //6개
+print(combinationArray)
+/*
+ [[1, 2], [1, 3], [1, 4],
+ [2, 3], [2, 4],
+ [3, 4]]
+ */
