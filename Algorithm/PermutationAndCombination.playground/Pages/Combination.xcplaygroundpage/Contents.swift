@@ -24,11 +24,11 @@ func combinationWithForLoop(array: [Int]) -> [[Int]] {
 
 
 //MARK: - 재귀함수를 사용한 순열 찾기
-let stringArray: [String] = ["A", "B", "C", "D"]
-var combinationArray: [[String]] = []
+let intArray: [Int] = [1, 2, 3, 4]
+var combinationArray: [[Int]] = []
 let numberOfPick: Int = 2
 
-func combinationWithRecursion<T>(array: [T], pickCount: Int, currentIndex: Int, tempArray: [T], combsArray: inout [[T]]) -> [[T]] {
+func combinationWithRecursion(array: [Int], pickCount: Int, currentIndex: Int, tempArray: [Int], combsArray: inout [[Int]]) -> [[Int]] {
     if tempArray.count == pickCount {
         print("템프어레이랑 픽카운트 같음: \(tempArray)")
         combsArray.append(tempArray)
@@ -42,4 +42,4 @@ func combinationWithRecursion<T>(array: [T], pickCount: Int, currentIndex: Int, 
     return combsArray
 }
 
-print("Combination with recursion: \(combinationWithRecursion(array: stringArray, pickCount: numberOfPick, currentIndex: 0, tempArray: [], combsArray: &combinationArray))")
+print("Combination with recursion: \(combinationWithRecursion(array: intArray, pickCount: numberOfPick, currentIndex: 0, tempArray: [], combsArray: &combinationArray))")
